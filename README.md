@@ -1,4 +1,4 @@
-# apexfilm
+# doughrise-demo
 
 ## Project setup
 ```
