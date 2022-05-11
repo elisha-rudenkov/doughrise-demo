@@ -1,9 +1,9 @@
 <template>
   <div class="content">
-    <div class="disclaimer">
+    <!-- <div class="disclaimer">
       This is a login demo for DoughRise. <br />
       Login to access <b @click="this.$router.push('/dashboard')">/dashboard</b>
-    </div>
+    </div> -->
     <div class="login-box noselect">
       <div class="greeting">{{ this.greeting }}</div>
 
@@ -375,9 +375,8 @@ export default {
   align-items: center;
 }
 .disclaimer {
-  background-color: var(--accent-2);
+  background-color: var(--accent-1);
   padding: 32px 16px;
-  color: #fff;
   border-radius: 16px;
   font-size: 18px;
 }
@@ -403,7 +402,7 @@ export default {
 .error {
   padding-top: 10px;
   padding-bottom: 2px;
-  color: var(--accent-2);
+  color: #ff6f9b;
   font-size: 16px;
 }
 
@@ -412,7 +411,7 @@ export default {
   box-shadow: 0 8px 12px 3px var(--shadow-color);
   background-color: var(--bg-secondary);
 
-  padding: 32px 16px;
+  padding: 8px 0;
 
   margin-top: 4rem;
   min-width: 320px;
@@ -621,8 +620,9 @@ End of Loader2
 /* Small screens */
 @media only screen and (max-width: 600px) {
   .login-box {
-    margin-top: 35%;
-    width: 80%;
+    margin: 1rem 4rem;
+    
+
   }
   .login-box input {
     height: 4rem;

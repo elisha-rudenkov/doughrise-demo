@@ -1,10 +1,7 @@
 <template>
   <div class="content">
-    <h2>Hello, {{username}}</h2>
-    This should only be visible if you are logged in. <br>
-    Please note that Front-end route guarding is great, but for the best security Firestore Rules and App Check have to be set up. <br>
-    
-    <div class="login-button" @click="signOut()">Log Out</div>
+    <Sidebar></Sidebar>
+    <Dashboard></Dashboard>
   </div>
 </template>
 
@@ -18,12 +15,15 @@
 //#f772a6 pink
 import { auth } from "@/main";
 
+import Sidebar from "@/components/sidebar.vue";
+import Dashboard from "@/components/dashboard.vue";
+
 export default {
   name: "ProtectedView",
-  components: {},
+  components: { Sidebar, Dashboard },
   data() {
     return {
-      username: auth.currentUser.displayName
+      username: auth.currentUser.displayName,
     };
   },
   methods: {
@@ -39,9 +39,7 @@ export default {
         });
     },
   },
-  computed: {
-   
-  },
+  computed: {},
 };
 </script>
 
@@ -49,8 +47,7 @@ export default {
 .content {
   width: 100%;
   display: flex;
-  flex-direction: column;
-  align-items: center;
+  /* align-items: center; */
 }
 .login-button {
   border: 1px solid var(--accent-2);

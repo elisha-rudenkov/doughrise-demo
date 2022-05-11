@@ -1,20 +1,42 @@
 <template>
+  <Header v-if="this.$route.path != '/'"></Header>
   <router-view />
 </template>
+<script>
+// @ is an alias to /src
+//import SidebarVue from "@/components/sidebar-nav.vue";
+
+//1a2833 blue
+//#915fb6 purple
+//#fe6275 orange
+//#f772a6 pink
+
+import Header from "@/components/header.vue";
+
+export default {
+  components: { Header },
+  data() {
+    return {};
+  },
+  methods: {},
+  computed: {},
+};
+</script>
 
 <style>
 :root {
   --text-primary: #0b1944;
   --text-secondary: #ffffff;
-  --accent-1: #ffc36d;
-  --accent-2: #ff6f9b;
-  --accent-3: #e267aa;
-  --accent-4: #7c50b9;
+  --accent-1: #ffd3e2;
+  --accent-2: #c8f7dc;
+  --accent-3: #d5deff;
+  --accent-4: #fee4cb;
   --bg-primary: rgb(255, 255, 255);
   --bg-secondary: #eeeaea77;
   --bg-3: #f3f3f3;
   --border-color: rgba(236, 232, 236, 0.733);
   --shadow-color: rgba(0, 0, 0, 0.2);
+  --link-color-active-bg: #000;
 }
 
 /* prevent text highlighting */
@@ -35,11 +57,11 @@ body {
   height: 100%;
 }
 #app {
-  margin-top: 2rem;
-  font-family: "Helvetica";
+  font-family: "DM Sans", sans-serif;
   text-align: center;
   color: #2c3e50;
   display: flex;
+  flex-direction: column;
 }
 /* width */
 ::-webkit-scrollbar {

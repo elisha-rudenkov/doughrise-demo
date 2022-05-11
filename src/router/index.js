@@ -1,6 +1,8 @@
 import { createRouter, createWebHistory } from 'vue-router'
 import HomeView from '../views/HomeView.vue'
-import ProtectedView from '@/views/ProtectedView'
+import DashboardView from '@/views/DashboardView'
+import GoalsView from '@/views/GoalsView'
+import TransactionsView from '@/views/TransactionsView'
 
 
 import { getAuth } from "firebase/auth";
@@ -14,8 +16,22 @@ const routes = [
   },
   {
     path: '/dashboard',
-    name: 'ProtectedView',
-    component: ProtectedView,
+    name: 'DashboardView',
+    component: DashboardView,
+    meta: { requiresAuth: true }
+
+  },
+  {
+    path: '/goals',
+    name: 'GoalsView',
+    component: GoalsView,
+    meta: { requiresAuth: true }
+
+  },
+  {
+    path: '/transactions',
+    name: 'TransactionsView',
+    component: TransactionsView,
     meta: { requiresAuth: true }
 
   },
